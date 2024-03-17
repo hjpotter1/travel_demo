@@ -85,6 +85,12 @@ body {
   display: inline-block;
   text-decoration: none;
   color: var(--main-text-color);
+  transition: 0.2s;
+}
+
+.main-structure header a:hover {
+  transform: scale(1.2);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .main-structure header,
