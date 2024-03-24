@@ -5,9 +5,9 @@
   --main-border-color: #111;
   --header-toggle-width: 30px;
   --header-pad-toggle-width: calc(var(--header-toggle-width) * 5 / 6);
-  --main-background-color: #333;
+  --main-background-color: #fff;
   --main-text-color: #fff;
-  --main-color: #0000ff;
+  --main-color: #03a8f4;
   --screen-desktop-padding-top-bottom: 50px;
   --screen-desktop-padding-left-right: 100px;
   --screen-pad-padding-top-bottom: 10px;
@@ -27,6 +27,11 @@
   --text-decoration-h1-pad-size: 2.5em;
   --text-decoration-h2-pad-size: 2em;
   --text-decoration-p-pad-size: 1rem;
+  --menu-width : 10em;
+  --main-structure-left : 2em;
+  --menu-margin-bottom:1em;
+  --main-desktop-max-width:1920px;
+
 }
 * {
   box-sizing: border-box;
@@ -57,11 +62,32 @@ body {
 }
 
 .main-structure {
+  position: absolute;
+  max-width: var(--main-desktop-max-width);
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  transition: 0.5s;
+  transform: perspective(5000px) translateX(0px) translateY(0) translateZ(0) rotateX(0deg) rotateY(0) rotateZ(0deg);
+}
+.main-structure.active {
+  width:calc(100% - var(--menu-width) - var(--main-structure-left));
+  height: calc(100vh-2 * var(--main-structure-left));
+  top: var(--main-structure-left);
+  right: var(--menu-width);
+  left: var(--main-structure-left);
+  bottom: var(--main-structure-left);
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  transform: perspective(5000px) translateX(0px) translateY(0) translateZ(0) rotateX(0deg) rotateY(20deg) rotateZ(0deg);
 }
 
 .main-structure header,
@@ -85,6 +111,12 @@ body {
 border: 3px solid black;
 border-radius: 50%;
 animation: menu_logo ease-in 1s infinite;
+}
+.main-structure header .menu-logo.active {
+  background: url('/src/icons/close.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: var(--header-toggle-width);
 }
 
 .main-structure header a {
