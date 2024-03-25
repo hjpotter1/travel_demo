@@ -2,6 +2,9 @@ const ACTIVE = 'active';
 const active_video = document.querySelectorAll(
   '.main-structure .contect video '
 );
+const active_video_overlay = document.querySelectorAll(
+  '.main-structure .contect .video-overlay '
+);
 
 const menu_logo = document.querySelector('header .menu-logo');
 const main_structrue = document.querySelector('.main-structure');
@@ -13,6 +16,7 @@ const menu_button = document.querySelectorAll('.aside-menu a');
 
 active_video[0].classList.remove(ACTIVE);
 active_video[0].classList.add(ACTIVE);
+active_video_overlay.className = 'video-overlay video-overlay-island';
 
 main_header.innerHTML = CONTENT_INFO.island.h1;
 second_header.innerHTML = CONTENT_INFO.island.h2;

@@ -163,6 +163,30 @@ animation: menu_logo ease-in 1s infinite;
   clip-path: ellipse(150% 70% at 0% 50%);
 }
 
+.main-structure .contect .video-overlay {
+  mix-blend-mode: overlay;
+}
+
+.main-structure .contect .video-overlay-island {
+  background-color: var(--video-overlay-island-color);
+}
+
+.main-structure .contect .video-overlay-spring {
+  background-color: var(--video-overlay-spring-color);
+}
+
+.main-structure .contect .video-overlay-summer {
+  background-color: var(--video-overlay-summer-color);
+}
+
+.main-structure .contect .video-overlay-autumn {
+  background-color: var(--video-overlay-autumn-color);
+}
+
+.main-structure .contect .video-overlay-winter {
+  background-color: var(--video-overlay-winter-color);
+}
+
 .main-structure footer {
   justify-content: flex-start;
 }
