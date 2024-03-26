@@ -313,6 +313,9 @@ transform: translateY(-5px);
     max-width: 500px;
     min-width: 300px;
   }
+  .main-structure.active {
+    transform: perspective(5000px) translateX(0px) translateY(0) translateZ(0) rotateX(0deg) rotateY(30deg) rotateZ(0deg);
+  }
 }
 
 @keyframes menu_logo{
